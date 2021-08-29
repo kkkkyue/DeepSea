@@ -5,6 +5,8 @@ on:
     branches:
       - master
       - rewrite
+  schedule:
+   - cron: '0 21 * * *'
 
 jobs:
   build:
