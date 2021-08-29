@@ -2,11 +2,11 @@
     "version": "3.0.0",
     "packages":{
         "minimal":{
-            "active": true,
+            "active": false,
             "modules": ["atmosphere", "hekate", "deepseaAssets", "hb-appstore"]
         },
         "normal":{
-            "active": true,
+            "active": false,
             "modules": [
                 "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
@@ -16,7 +16,7 @@
             ]
         },
         "advanced":{
-            "active": true,
+            "active": false,
             "modules": [
                 "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
@@ -24,6 +24,17 @@
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
                 "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
                 "deepseaCPR", "TegraExplorer", "NX-Shell"
+            ]
+        },
+        "kkkkyue":{
+            "active": true,
+            "modules": [
+                "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
+                "deepseaToolbox", "deepseaCleaner",
+                "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
+                "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
+                "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
+                "deepseaCPR", "TegraExplorer", "NX-Shell","sigpatch"
             ]
         }
     }
