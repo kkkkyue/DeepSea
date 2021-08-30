@@ -1,0 +1,15 @@
+{
+    "repo":"shchmue/Lockpick",
+    "assetRegex":[".*lockpick.*\\.nro"],
+    "customSteps":[
+        {
+            "action": "createDir",
+            "source": "switch/lockpick"
+        },
+        {
+            "action": "move",
+            "source": "Lockpick.nro",
+            "destination": "switch/dbi/Lockpick.nro"
+        }
+    ]
+}

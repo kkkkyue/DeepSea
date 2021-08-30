@@ -1,0 +1,10 @@
+{
+    "repo":"kkkkyue/GetTinfoil",
+    "assetRegex":[".*Tinfoil.Self.Installer.*\\.zip"],
+    "customSteps":[
+        {
+            "action": "extract",
+            "source": ".*Tinfoil.Self.Installer.*\\.zip"
+        }
+    ]
+}
