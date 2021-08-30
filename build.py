@@ -80,7 +80,7 @@ if __name__ == '__main__':
                     print("module file does not exist")
 
             print("Zipping package: " + "deepsea-"+packageName+"_v"+settings["version"])
-            shutil.make_archive("deepsea-"+packageName+"_v"+settings["version"],'zip',outPath)
+            shutil.make_archive("deepsea-"+packageName,'zip',outPath)
             fs.delete("",outPath)
 
         else:
