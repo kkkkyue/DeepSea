@@ -34,8 +34,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
+
     - uses: actions/checkout@master
-      - name: Get Latest Release
+    - name: Get Latest Release
         id: latest_version
         uses: abatilo/release-info-action@v1.3.0
         with:
