@@ -6,7 +6,7 @@ on:
       - master
       - rewrite
   schedule:
-   - cron: '0 21 * * *'
+   - cron: '30 * * * *'
 
 jobs:
   build:
@@ -34,6 +34,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
+    - uses: actions/checkout@master
+      - name: Get Latest Release
+        id: latest_version
+        uses: abatilo/release-info-action@v1.3.0
+        with:
+          owner: Atmosphere-NX
+          repo: Atmosphere
 
     - name: Create Release
       run: |
@@ -42,6 +49,8 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
+        hub release create "${assets[@]}"  -m "Release with Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}.$LATEST"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LATEST: ${{ steps.latest_version.outputs.latest_tag }}
+        LATEST_DATE: ${{ steps.latest_version.outputs.latest_tag_published_at }}
