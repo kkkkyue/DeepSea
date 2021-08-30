@@ -1,6 +1,6 @@
 {
     "repo":"shchmue/Lockpick",
-    "assetRegex":[".*lockpick.*\\.nro"],
+    "assetRegex":[".*Lockpick.*\\.nro"],
     "customSteps":[
         {
             "action": "createDir",
