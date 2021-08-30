@@ -1,0 +1,19 @@
+{
+    "repo":"joel16/NX-Shell",
+    "assetRegex":[".*Lithium.*\\.zip"],
+    "customSteps":[
+        {
+            "action": "extract",
+            "source": ".*Lithium.*\\.zip"
+        },
+        {
+            "action": "createDir",
+            "source": "switch/Lithium"
+        },
+        {
+            "action": "move",
+            "source": "lithium.nro",
+            "destination": "switch/Lithium/lithium.nro"
+        }
+    ]
+}
