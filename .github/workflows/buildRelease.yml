@@ -51,6 +51,7 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
+        hub release delete "v${{ steps.set-version.outputs.version }}.$LATEST"
         hub release create "${assets[@]}"  -m "Release with Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}.$LATEST"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
