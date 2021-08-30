@@ -42,7 +42,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
-
+    
+    -name: del release
+     uses: liudonghua123/delete-release-action@v1
+     with:
+       suppress_errors: true
+       release_name: 'Release with Atmosphere ${{ steps.latest_version.outputs.latest_tag }}''
 
     - name: Create Release
       run: |
