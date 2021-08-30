@@ -57,9 +57,12 @@ if __name__ == '__main__':
                                     fs.copy(moduleName, customStep["source"], customStep["destination"])
 
                             if customStep["action"] == "move":
-                                print("- custom step: " + customStep["action"] + " -> " + customStep["source"])
-                                fs.move(moduleName, customStep["source"], customStep["destination"])
-
+                                 if "fileRegex" in customStep:
+                                    print("- custom step: " + customStep["action"] + " -> " + customStep["fileRegex"])
+                                    fs.move(moduleName, customStep["source"], customStep["destination"], customStep["fileRegex"])
+                                 else:
+                                    print("- custom step: " + customStep["action"] + " -> " + customStep["source"])
+                                    fs.move(moduleName, customStep["source"], customStep["destination"])
                             if customStep["action"] == "replaceText":
                                 print("- custom step: " + customStep["action"] + " -> " + customStep["source"])
                                 fs.replaceText(moduleName, customStep["source"], customStep["target"], customStep["replacement"])

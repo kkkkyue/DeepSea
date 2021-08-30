@@ -62,9 +62,22 @@ class FS():
                     dpath = Path(Path.joinpath(self.workdir, modulename, dest))
                     shutil.copyfile(str(assetPath), str(dpath))
 
-    def move(self, modulename, source, dest):
-        self.copy(modulename, source, dest)
-        self.delete(modulename, source)
+    def move(self, modulename, source, dest,regex=False):
+        if regex == False:
+            self.copy(modulename, source, dest)
+            self.delete(modulename, source)
+        else:
+            path = Path(Path.joinpath(self.workdir, modulename))
+            for filename in os.listdir(path):
+                if re.search(regex, filename):
+                    assetPath = Path(Path.joinpath(path, filename))
+                    dpath = Path(Path.joinpath(self.workdir, modulename, dest))
+                    shutil.copyfile(str(assetPath), str(dpath))
+                    if not assetPath.is_dir():
+                      if os.path.exists(assetPath):
+                         os.remove(assetPath)
+                    else:
+                      shutil.rmtree(assetPath, ignore_errors=True)
 
     def createDir(self, modulename, source):
         Path(Path.joinpath(self.workdir, modulename, source)).mkdir(parents=True, exist_ok=True)
