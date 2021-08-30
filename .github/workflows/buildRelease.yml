@@ -37,11 +37,11 @@ jobs:
 
     - uses: actions/checkout@master
     - name: Get Latest Release
-        id: latest_version
-        uses: abatilo/release-info-action@v1.3.0
-        with:
-          owner: Atmosphere-NX
-          repo: Atmosphere
+      id: latest_version
+      uses: abatilo/release-info-action@v1.3.0
+      with:
+        owner: Atmosphere-NX
+        repo: Atmosphere
 
     - name: Create Release
       run: |
