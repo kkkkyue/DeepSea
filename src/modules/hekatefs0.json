@@ -21,6 +21,12 @@
             "source": "bootloader",
             "fileRegex": ".*hekate.*\\.bin",
             "destination": "atmosphere/reboot_payload.bin"
+        },
+        {
+            "action": "move",
+            "source": "./",
+            "fileRegex": ".*hekate_ctcaer.*\\.bin",
+            "destination": "payload.bin"
         }
     ]
 }
