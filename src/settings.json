@@ -29,13 +29,13 @@
         "integration":{
             "active": true,
             "modules": [
-                "atmosphere", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
+                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
                 "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
-                "deepseaCPR", "TegraExplorer", "NX-Shell","sigpatch","lithium","dbi","lockpick",
-                "tinfoil"
+                "deepseaCPR", "TegraExplorer", "NX-Shell","sigpatch","dbi","lockpick",
+                "tinfoil","checkpoint","NXThemesInstaller"
             ]
         }
     }

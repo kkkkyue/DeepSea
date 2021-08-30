@@ -1,10 +1,16 @@
 {
     "repo":"kkkkyue/GetTinfoil",
-    "assetRegex":[".*Tinfoil.Applet.Mode.*\\.zip"],
+    "assetRegex":[".*Tinfoil.Self.Installer.*\\.zip",".*Tinfoil.*\\.nsp"],
     "customSteps":[
         {
             "action": "extract",
-            "source": ".*Tinfoil.Applet.Mode.*\\.zip"
+            "source": ".*Tinfoil.Self.Installer.*\\.zip"
+        },
+        {
+            "action": "move",
+            "source": "./",
+            "fileRegex": ".*Tinfoil.*\\.nsp",
+            "destination": "Tinfoil.nsp"
         }
     ]
 }

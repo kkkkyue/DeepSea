@@ -1,0 +1,15 @@
+{
+    "repo":"FlagBrew/Checkpoint",
+    "assetRegex":[".*Checkpoint.*\\.nro"],
+    "customSteps":[
+        {
+            "action": "createDir",
+            "source": "switch/Checkpoint"
+        },
+        {
+            "action": "move",
+            "source": "Checkpoint.nro",
+            "destination": "switch/Checkpoint/Checkpoint.nro"
+        }
+    ]
+}

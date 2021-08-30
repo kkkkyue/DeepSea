@@ -1,0 +1,15 @@
+{
+    "repo":"exelix11/SwitchThemeInjector",
+    "assetRegex":[".*NXThemesInstaller.*\\.nro"],
+    "customSteps":[
+        {
+            "action": "createDir",
+            "source": "switch/NXThemesInstaller"
+        },
+        {
+            "action": "move",
+            "source": "NXThemesInstaller.nro",
+            "destination": "switch/NXThemesInstaller/NXThemesInstaller.nro"
+        }
+    ]
+}
