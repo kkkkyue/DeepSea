@@ -1,0 +1,18 @@
+{
+    "repo":"kkkkyue/DeepSea-Assets",
+    "assetRegex":[".*Assets.*\\.zip"],
+    "customSteps":[
+        {
+            "action": "extract",
+            "source": ".*Assets.*\\.zip"
+        },
+        {
+            "action": "delete",
+            "source": ".github"
+        },
+        {
+            "action": "delete",
+            "source": ".git"
+        }
+    ]
+}

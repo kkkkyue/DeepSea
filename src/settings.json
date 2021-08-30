@@ -29,7 +29,7 @@
         "kkkkyue":{
             "active": true,
             "modules": [
-                "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
+                "atmosphere", "hekate", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
