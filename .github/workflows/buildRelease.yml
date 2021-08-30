@@ -43,6 +43,13 @@ jobs:
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
     
+    - name: Delete Release
+      uses: larryjoelane/delete-release-action@v1.0.24
+      with:
+        # name of the release to delete
+        release-name: 'Release with Atmosphere ${{ steps.latest_version.outputs.latest_tag }}'
+        # github token should be pulled from a secret
+        token:  ${{ secrets.GITHUB_TOKEN }}
     - name: del release
       uses: liudonghua123/delete-release-action@v1
       with:
