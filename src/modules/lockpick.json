@@ -9,7 +9,7 @@
         {
             "action": "move",
             "source": "Lockpick.nro",
-            "destination": "switch/dbi/Lockpick.nro"
+            "destination": "switch/lockpick/Lockpick.nro"
         }
     ]
 }
