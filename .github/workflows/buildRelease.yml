@@ -19,7 +19,15 @@ jobs:
       run: |
         version=$(cat ./VERSION | python -c 'import sys, json; f=open("./src/settings.json");print(json.loads(f.read())["version"])')
         echo "::set-output name=version::$version"
-        
+
+    - uses: actions/checkout@master
+    - name: Get Latest Release
+      id: latest_version
+      uses: abatilo/release-info-action@v1.3.0
+      with:
+        owner: Atmosphere-NX
+        repo: Atmosphere
+       
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
@@ -35,13 +43,6 @@ jobs:
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
 
-    - uses: actions/checkout@master
-    - name: Get Latest Release
-      id: latest_version
-      uses: abatilo/release-info-action@v1.3.0
-      with:
-        owner: Atmosphere-NX
-        repo: Atmosphere
 
     - name: Create Release
       run: |
