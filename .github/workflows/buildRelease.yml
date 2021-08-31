@@ -45,6 +45,15 @@ jobs:
     - name: Install dependencies
       run: |
         if [ -f ./requirements.txt ]; then pip3 install -r ./requirements.txt; fi
+        pip install lastversion
+        for asset in ./src/modules/*.json; do
+          assets+=("-a" "$asset")
+          repo=$(python -c 'import sys, json; f=open("$asset");print(json.loads(f.read())["repo"])')
+          echo "$repo"
+          lastv=lastversion "https://github.com/$repo"
+          echo "$lastv"
+          
+        done
         
     - name: Create DeepSea Packages
       env:
