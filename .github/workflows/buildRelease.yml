@@ -52,7 +52,7 @@ jobs:
           JQ_EXEC=`which jq`
           repo=$(cat $asset | ${JQ_EXEC} .repo | sed 's/\"//g')
           echo "$repo"
-          lastv=$(lastversion "https://github.com/$repo")
+          lastv=$(lastversion "https://github.com/$repo"| echo "0")
           echo "$lastv"
           
         done
