@@ -60,11 +60,12 @@ jobs:
         cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
         ./BaiduPCS-Go update
         ./BaiduPCS-Go login "bduss=${{ secrets.BDUSS }}"
+        echo "bduss=$BDUSS"
         set -x
         assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
-          filename=${$asset#*/}
+          filename={$asset#*/}
           ./BaiduPCS-Go rm /Deepsea/"$filename"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
