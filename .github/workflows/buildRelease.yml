@@ -65,7 +65,7 @@ jobs:
         assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
-          filename={$asset#*/}
+          filename={asset#*/}
           ./BaiduPCS-Go rm /Deepsea/"$filename"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
