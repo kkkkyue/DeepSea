@@ -59,11 +59,12 @@ jobs:
         chmod +x ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go
         cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
         ./BaiduPCS-Go update
-        ./BaiduPCS-Go login bduss="${{ secrets.BDUSS }}"
+        ./BaiduPCS-Go login "bduss=${{ secrets.BDUSS }}"
         set -x
         assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
+          filename=${$asset#*/}
           ./BaiduPCS-Go rm /Deepsea/"$asset"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
