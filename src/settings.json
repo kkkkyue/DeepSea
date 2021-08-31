@@ -2,11 +2,11 @@
     "version": "3.0.0",
     "packages":{
         "minimal":{
-            "active": false,
+            "active": true,
             "modules": ["atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore","sigpatch"]
         },
         "normal":{
-            "active": false,
+            "active": true,
             "modules": [
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
@@ -16,7 +16,7 @@
             ]
         },
         "advanced":{
-            "active": false,
+            "active": true,
             "modules": [
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
