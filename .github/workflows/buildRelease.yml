@@ -70,7 +70,7 @@ jobs:
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
         if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}.$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}.$LATEST"; fi
-        hub release create "${assets[@]}"  -m "Release with Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}.$LATEST"
+        hub release create "${assets[@]}"  -m "Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}_$LATEST"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LATEST: ${{ steps.Atmospherelatest_version.outputs.latest_tag }}
