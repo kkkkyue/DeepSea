@@ -54,10 +54,20 @@ jobs:
     
     - name: Create Release
       run: |
+        wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.8.3/BaiduPCS-Go-v3.8.3-linux-amd64.zip
+        unzip BaiduPCS-Go-v3.8.3-linux-amd64.zip
+        rm ./BaiduPCS-Go-v3.8.3-linux-amd64.zip
+        chmod +x ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go
+        cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
+        ./BaiduPCS-Go update
+        ./BaiduPCS-Go login "-bduss=$BDUSS"
         set -x
         assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
+          filename=${asset#*/}
+          ./BaiduPCS-Go rm /Deepsea/"$filename"
+          ./BaiduPCS-Go upload "$asset" /DeepSea
         done
         if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}.$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}.$LATEST"; fi
         hub release create "${assets[@]}"  -m "Release with Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}.$LATEST"
@@ -66,3 +76,4 @@ jobs:
         LATEST: ${{ steps.Atmospherelatest_version.outputs.latest_tag }}
         LATEST_DATE: ${{ steps.Atmospherelatest_version.outputs.latest_tag_published_at }}
         LASTTAG: ${{ steps.latest_version.outputs.latest_tag }}
+        BDUSS: ${{ secrets.BDUSS }}
