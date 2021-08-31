@@ -49,7 +49,7 @@ jobs:
         for asset in ./src/modules/*.json; do
           assets+=("-a" "$asset")
           echo "$asset"
-          repo=$(python -c 'import sys, json,commands; f=open(commands.getoutput(echo asset));print(json.loads(f.read())["repo"])')
+          repo=$(python -c 'import sys, json,commands; f=open(commands.getoutput(echo $asset));print(json.loads(f.read())["repo"])')
           echo "$repo"
           lastv=lastversion "https://github.com/$repo"
           echo "$lastv"
