@@ -3,27 +3,40 @@
     "packages":{
         "minimal":{
             "active": true,
-            "modules": ["atmosphere", "hekate", "deepseaAssets", "hb-appstore"]
+            "modules": ["atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore","sigpatch"]
         },
         "normal":{
             "active": true,
             "modules": [
-                "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
+                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "sys-ftpd-light", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu",
-                "deepseaCPR"
+                "deepseaCPR","sigpatch"
             ]
         },
         "advanced":{
             "active": true,
             "modules": [
-                "atmosphere", "hekate", "deepseaAssets", "hb-appstore", 
+                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
                 "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
                 "deepseaCPR", "TegraExplorer", "NX-Shell", "MissionControl", "ldn_mitm"
+                ,"sigpatch"
+            ]
+        },
+        "integration":{
+            "active": true,
+            "modules": [
+                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
+                "deepseaToolbox", "deepseaCleaner",
+                "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
+                "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
+                "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
+                "deepseaCPR", "TegraExplorer", "NX-Shell","sigpatch","dbi","lockpick",
+                "tinfoil","checkpoint","NXThemesInstaller","MissionControl", "ldn_mitm"
             ]
         }
     }
