@@ -59,12 +59,12 @@ jobs:
         chmod +x ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go
         cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
         ./BaiduPCS-Go update
-        ./BaiduPCS-Go login bduss="$BDUSS"
+        ./BaiduPCS-Go login bduss="${{ secrets.BDUSS }}"
         set -x
         assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
-          ./BaiduPCS-Go del /Deepsea/"$asset"
+          ./BaiduPCS-Go rm /Deepsea/"$asset"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
         if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}.$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}.$LATEST"; fi
