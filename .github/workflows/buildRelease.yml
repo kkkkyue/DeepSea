@@ -54,10 +54,11 @@ jobs:
     
     - name: Create Release
       run: |
-        wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.8.3/BaiduPCS-Go-v3.8.3-linux-arm64.zip
-        unzip BaiduPCS-Go-v3.8.3-linux-arm64.zip
-        chmod +x ./BaiduPCS-Go-v3.8.3-linux-arm64/BaiduPCS-Go
+        wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.8.3/BaiduPCS-Go-v3.8.3-linux-amd64.zip
+        unzip BaiduPCS-Go-v3.8.3-linux-amd64.zip
+        chmod +x ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go
         cp ./BaiduPCS-Go-v3.8.3-linux-arm64/BaiduPCS-Go ./
+        ./BaiduPCS-Go update
         ./BaiduPCS-Go login bduss="$BDUSS"
         set -x
         assets=()
