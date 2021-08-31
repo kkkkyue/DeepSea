@@ -60,8 +60,7 @@ jobs:
         chmod +x ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go
         cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
         ./BaiduPCS-Go update
-        ./BaiduPCS-Go login bduss=$BDUSS
-        echo "bduss=$BDUSS"
+        ./BaiduPCS-Go login "-bduss=$BDUSS"
         set -x
         assets=()
         for asset in ./*.zip; do
