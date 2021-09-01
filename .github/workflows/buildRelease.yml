@@ -51,6 +51,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
+        hash=$(cat ./VERSION | python -c 'import sys, json; f=open("verison.info");hash(f.read())')
+        echo "::set-output name=hash::$hash"
     
     - name: Create Release
       run: |

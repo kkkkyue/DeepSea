@@ -3,6 +3,7 @@ import argparse, json, os, importlib, shutil
 from pathlib import Path
 from distutils.dir_util import copy_tree
 
+
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description="TeamNeptune's DeepSea build script.")
@@ -33,7 +34,6 @@ if __name__ == '__main__':
                         print("Downloading: " + module["repo"])
                         dlPath = fs.createDirs(moduleName)
                         downloadedFiles = gh.downloadLatestRelease(module, dlPath)
-
                         for customStep in module["customSteps"]:
 
                             if customStep["action"] == "createDir":

@@ -10,8 +10,11 @@ class GH():
         self.github = Github(self.token)
 
     def downloadLatestRelease(self, moduleJson, downloadPath):
+        versionText=""
+        version=""
         try:
             ghRepo = self.github.get_repo(moduleJson["repo"])
+            versionText+=ghRepo.name
         except:
             print("Unable to get: ", moduleJson["repo"])
             return
@@ -21,7 +24,13 @@ class GH():
             print("No available releases for: ", moduleJson["repo"])
             return
         ghLatestRelease = releases[0]
-
+        versionText+="版本号:"+ghLatestRelease.tag_name
+        version=ghLatestRelease.tag_name
+        f2 = open("verison.info",'a+')
+        f2.read()
+        f2.write('\n'+versionText)
+        f2.close()
+        
         downloadedFiles = []
 
         for pattern in moduleJson["assetRegex"]:

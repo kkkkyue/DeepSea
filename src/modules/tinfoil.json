@@ -1,5 +1,5 @@
 {
-    "repo":"kkkkyue/GetTinfoil",
+    "repo":"kkkkyue/Tinfoil",
     "assetRegex":[".*Tinfoil.Self.Installer.*\\.zip",".*Tinfoil.*\\.nsp"],
     "customSteps":[
         {
