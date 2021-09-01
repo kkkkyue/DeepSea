@@ -28,7 +28,7 @@ class GH():
         version=ghLatestRelease.tag_name
         f2 = open("verison.info",'a+')
         f2.read()
-        f2.write('\n'+versionText)
+        f2.write('\n -'+versionText)
         f2.close()
         
         downloadedFiles = []
