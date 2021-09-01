@@ -62,9 +62,9 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        info="\n$(cat ./verison.info)"
+        info=$(cat ./verison.info)
         if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}_$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}_$LATEST"; fi
-        hub release create "${assets[@]}" -m $"Release with DeepSea v${{ steps.set-version.outputs.version }$info} and Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}_$LATEST"
+        hub release create "${assets[@]}" -m $"Release with DeepSea v${{ steps.set-version.outputs.version }$info} and Atmosphere $LATEST \n$info" "v${{ steps.set-version.outputs.version }}_$LATEST"
         
         wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.8.3/BaiduPCS-Go-v3.8.3-linux-amd64.zip
         unzip BaiduPCS-Go-v3.8.3-linux-amd64.zip
