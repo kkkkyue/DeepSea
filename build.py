@@ -23,7 +23,10 @@ if __name__ == '__main__':
     gh = GH.GH(args.githubToken)
     fs = FS.FS()
 
-
+    f2 = open("verison.info",'a+')
+    f2.read()
+    f2.write('\n')
+    f2.close()
     for packageName in settings["packages"]:
         packageObj = settings["packages"][packageName]
         if packageObj["active"] == True:

@@ -61,7 +61,7 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        info=$"\n$(cat ./verison.info)"
+        info=$(cat ./verison.info)
         if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}_$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}_$LATEST"; fi
         hub release create "${assets[@]}" -m $"Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST $info" "v${{ steps.set-version.outputs.version }}_$LATEST"
         
