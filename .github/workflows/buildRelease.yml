@@ -72,8 +72,9 @@ jobs:
           ./BaiduPCS-Go rm /Deepsea/"$filename"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
-        if [ $LASTTAG = "$HASH" ]; then hub release delete "$HASH"; fi
-        hub release create "${assets[@]}"  -m "Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST" "$HASH"
+        info=$(cat ./verison.info)
+        if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}_$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}_$LATEST"; fi
+        hub release create "${assets[@]}"  -m "Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST $info" "v${{ steps.set-version.outputs.version }}_$LATEST"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LATEST: ${{ steps.Atmospherelatest_version.outputs.latest_tag }}
