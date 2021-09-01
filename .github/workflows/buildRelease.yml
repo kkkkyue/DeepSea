@@ -57,6 +57,12 @@ jobs:
     - name: Create Release
       id: Create-Release
       run: |
+        set -x
+        assets=()
+        info=$(cat ./verison.info)
+        if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}_$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}_$LATEST"; fi
+        hub release create "${assets[@]}" -F "./verison.info" -m "Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST" "v${{ steps.set-version.outputs.version }}_$LATEST"
+        
         wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.8.3/BaiduPCS-Go-v3.8.3-linux-amd64.zip
         unzip BaiduPCS-Go-v3.8.3-linux-amd64.zip
         rm ./BaiduPCS-Go-v3.8.3-linux-amd64.zip
@@ -64,17 +70,12 @@ jobs:
         cp ./BaiduPCS-Go-v3.8.3-linux-amd64/BaiduPCS-Go ./
         ./BaiduPCS-Go update
         ./BaiduPCS-Go login "-bduss=$BDUSS"
-        set -x
-        assets=()
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
           filename=${asset#*/}
           ./BaiduPCS-Go rm /Deepsea/"$filename"
           ./BaiduPCS-Go upload "$asset" /DeepSea
         done
-        info=$(cat ./verison.info)
-        if [ $LASTTAG = "v${{ steps.set-version.outputs.version }}_$LATEST" ]; then hub release delete "v${{ steps.set-version.outputs.version }}_$LATEST"; fi
-        hub release create "${assets[@]}"  -m "Release with DeepSea v${{ steps.set-version.outputs.version }} and Atmosphere $LATEST $info" "v${{ steps.set-version.outputs.version }}_$LATEST"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LATEST: ${{ steps.Atmospherelatest_version.outputs.latest_tag }}
