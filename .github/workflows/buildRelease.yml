@@ -39,7 +39,11 @@ jobs:
     - name: Set up Python 3.9
       uses: actions/setup-python@v1
       with:
+<<<<<<< HEAD
         python-version: 3.8.11
+=======
+        python-version: 3.9.7
+>>>>>>> 6787fc2210539c64308a197c143eb64c594d3173
 
     - name: Install dependencies
       run: |
