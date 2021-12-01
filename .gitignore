@@ -142,3 +142,5 @@ dmypy.json
 /verison.info
 11.sh
 src/scripts/test.py
+.vs/DeepSea/v17/.suo
+.vs/slnx.sqlite
