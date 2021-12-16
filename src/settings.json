@@ -1,5 +1,5 @@
 {
-    "version": "3.3.2",
+    "version": "3.4.2",
     "packages":{
         "minimal":{
             "active": true,
@@ -21,8 +21,8 @@
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
-                "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
-                "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
+                "sys-clk", "sys-con","sys-ftpd-light",
+                "ldn_mitm", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
                 "deepseaCPR", "TegraExplorer", "NX-Shell", "MissionControl"
                 ,"sigpatch"
             ]
