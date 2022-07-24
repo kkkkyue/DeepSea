@@ -10,8 +10,7 @@
             "modules": [
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
-                "sys-ftpd-light", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu",
-                "deepseaCPR","sigpatch"
+                "sys-ftpd-light", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "sigpatch"
             ]
         },
         "advanced":{
@@ -20,9 +19,7 @@
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "sys-clk", "sys-con","sys-ftpd-light",
-                "ldn_mitm", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
-                "deepseaCPR", "TegraExplorer", "NX-Shell", "MissionControl"
-                ,"sigpatch"
+                "ldn_mitm", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay", "TegraExplorer", "NX-Shell", "MissionControl", "sigpatch"
             ]
         },
         "integration":{
@@ -31,9 +28,7 @@
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
-                "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
-                "deepseaCPR", "TegraExplorer", "NX-Shell","sigpatch","dbi","lockpick",
-                "tinfoil","checkpoint","NXThemesInstaller","MissionControl", "ldn_mitm"
+                "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay", "TegraExplorer", "NX-Shell","sigpatch","dbi","lockpick", "tinfoil","checkpoint","NXThemesInstaller","MissionControl"
             ]
         }
     }
