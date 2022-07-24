@@ -8,8 +8,7 @@
         "normal":{
             "active": true,
             "modules": [
-                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
-                "deepseaToolbox", "deepseaCleaner",
+                "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "sys-ftpd-light", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu",
                 "deepseaCPR","sigpatch"
@@ -19,7 +18,6 @@
             "active": true,
             "modules": [
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
-                "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "sys-clk", "sys-con","sys-ftpd-light",
                 "ldn_mitm", "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
@@ -31,7 +29,6 @@
             "active": true,
             "modules": [
                 "atmospherefs0", "hekatefs0", "kkkkyueAssets", "hb-appstore", 
-                "deepseaToolbox", "deepseaCleaner",
                 "aioUpdater", "edizon", "emuiibo", "jksv", "nxmtp", "tinwoo",
                 "ldn_mitm", "sys-clk", "sys-con","sys-ftpd-light",
                 "nx-ovlloader", "ovl-sysmodules", "Tesla-Menu", "Status-Monitor-Overlay",
