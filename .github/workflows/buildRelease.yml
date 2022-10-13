@@ -18,7 +18,7 @@ jobs:
     - id: set-version
       run: |
         version=$(cat ./VERSION | python -c 'import sys, json; f=open("./src/settings.json");print(json.loads(f.read())["version"])')
-        echo "::set-output name=version::$version"
+        echo "version=$version" >> $GITHUB_OUTPUT
     - uses: actions/checkout@master
     - name: Get Atmosphere Latest Release
       id: Atmospherelatest_version
@@ -51,7 +51,7 @@ jobs:
       run: | 
         python ./build.py -gt="$GITHUB_TOKEN" -v="v${{ steps.set-version.outputs.version }}"
         hash=$(cat ./VERSION | python -c 'import sys, json; f=open("./verison.info");print(hash(f.read()))')
-        echo "::set-output name=hash::$hash"
+        echo "hash=$hash" >> $GITHUB_OUTPUT
     
     - name: Create Release
       id: Create-Release
