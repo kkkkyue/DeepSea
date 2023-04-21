@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+    schedule:
+   - cron: '31 * * * *'
+
 
 defaults:
   run:
@@ -12,7 +15,25 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Get Latest Release
+      id: atmosphere_version
+      uses: abatilo/release-info-action@v1.3.0
+      with:
+        owner: Atmosphere-NX
+        repo: Atmosphere
     
+    steps:
+    - uses: actions/checkout@master
+    - name: Get Latest Release
+      id: latest_version
+      uses: abatilo/release-info-action@v1.3.0
+      with:
+        owner: kkkkyue
+        repo: DeepSea
+
     steps:
     - uses: actions/checkout@v2
       
@@ -43,6 +64,8 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
+        if [ $LASTTAG = "v${{ steps.atmosphere_version.outputs.latest_tag }}" ]; then hub release delete "v${{ steps.atmosphere_version.outputs.latest_tag }}"; fi
+        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }} Atmosphere ${{ steps.atmosphere_version.outputs.latest_tag }}" "v${{ steps.atmosphere_version.outputs.latest_tag }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LASTTAG: ${{ steps.latest_version.outputs.latest_tag }}
