@@ -120,6 +120,26 @@
                     ]
                 },
                 {
+                    "name": "copy",
+                    "arguments": [
+                        "bootloader/hekate_*",
+                        "bootloader/update.bin"
+                    ]
+                },
+                {
+                    "name": "copy",
+                    "arguments": [
+                        "hekate_ctcaer_*",
+                        "payload.bin"
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "arguments": [
+                        "hekate_ctcaer_*"
+                    ]
+                },
+                {
                     "name": "createDir",
                     "arguments": [
                         "atmosphere"
