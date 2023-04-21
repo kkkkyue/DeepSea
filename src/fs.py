@@ -57,12 +57,11 @@ class FS():
                 self.__delete(filename)   
 
     def __delete(self, source):
-        for elements in glob.glob(f"./menv/{source}"):
-            if not os.path.isdir(elements):
-              if os.path.exists(elements):
-                os.remove(elements)
-            else:
-              shutil.rmtree(elements, ignore_errors=True)
+        if not os.path.isdir(f"./menv/{source}"):
+            if os.path.exists(f"./menv/{source}"):
+                os.remove(f"./menv/{source}")
+        else:
+            shutil.rmtree(f"./menv/{source}", ignore_errors=True)
 
         
     
