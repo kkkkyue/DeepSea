@@ -63,7 +63,7 @@ jobs:
           assets+=("-a" "$asset")
         done
         if [ $LASTTAG = "v${{ steps.atmosphere_version.outputs.latest_tag }}" ]; then hub release delete "v${{ steps.atmosphere_version.outputs.latest_tag }}"; fi
-        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }} Atmosphere ${{ steps.atmosphere_version.outputs.latest_tag }}" "v${{ steps.atmosphere_version.outputs.latest_tag }}"
+        hub release create "${assets[@]}" -m "Release v${{ steps.set-version.outputs.version }} Atmosphere ${{ steps.atmosphere_version.outputs.latest_tag }}" "v${{ steps.atmosphere_version.outputs.latest_tag }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LASTTAG: ${{ steps.latest_version.outputs.latest_tag }}
