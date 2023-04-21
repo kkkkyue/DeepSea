@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - master
-    schedule:
-   - cron: '31 * * * *'
+  schedule:
+    - cron: '31 * * * *'
 
 
 defaults:
