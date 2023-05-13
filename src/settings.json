@@ -549,20 +549,13 @@
         "teslamenu": {
             "repo": "WerWolv/Tesla-Menu",
             "regex": [
-                ".*ovlmenu.*\\.ovl"
+                ".*ovlmenu.*\\.zip"
             ],
             "steps": [
                 {
-                    "name": "create_dir",
+                    "name": "extract",
                     "arguments": [
-                        "switch/.overlays"
-                    ]
-                },
-                {
-                    "name": "move",
-                    "arguments": [
-                        "ovlmenu.ovl",
-                        "switch/.overlays/ovlmenu.ovl"
+                        ".*ovlmenu.*\\.zip"
                     ]
                 }
             ]
