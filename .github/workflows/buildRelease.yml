@@ -65,6 +65,8 @@ jobs:
         file_content=$(cat "$file_path")
         if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }}; fi
         hub release create -m "$file_content" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}"
+      env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: release-downloader
     # You may pin to the exact commit or the version.
@@ -97,5 +99,4 @@ jobs:
     - name: baidupcs
       run: |
         BaiduPCS-Go update
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
