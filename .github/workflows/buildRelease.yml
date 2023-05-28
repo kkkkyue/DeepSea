@@ -2,8 +2,11 @@ name: BuildRelease
 
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+   - cron: '0 12 * * *'
 
 defaults:
   run:
@@ -16,6 +19,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
+    - uses: actions/checkout@master
+    - name: Get Latest Release
+      id: latest_version
+      uses: abatilo/release-info-action@v1.3.0
+      with:
+        owner: Atmosphere-NX
+        repo: Atmosphere
+
     - id: set-version
       run: |
         version=$(python -c 'import sys, json; f=open("./settings.json");print(json.loads(f.read())["releaseVersion"])')
@@ -43,6 +54,8 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        hub release create "${assets[@]}" -d -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
+        if [ $LASTTAG = v${{ steps.set-version.outputs.version }} ]; then hub release delete v${{ steps.set-version.outputs.version }}; fi
+        hub release create "${assets[@]}"  -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LASTTAG: ${{ steps.latest_version.outputs.latest_tag }}
