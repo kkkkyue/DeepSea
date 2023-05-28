@@ -22,7 +22,11 @@ class GH():
             logging.warning(f"No available release for: {module['repo']}")
             return
         ghLatestRelease = releases[0]
-
+        tag = ghLatestRelease.tag_name
+        repo_name = module["repo"].split('/')[1]
+        output_file = open('repo_tags.txt', 'w')
+        output_file.write(f"{repo_name}: {tag}\n")
+        output_file.close()
         for pattern in module["regex"]:
             for asset in ghLatestRelease.get_assets():
                 if re.search(pattern, asset.name):
