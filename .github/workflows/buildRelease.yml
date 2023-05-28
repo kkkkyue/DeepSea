@@ -61,7 +61,9 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
+        file_path="./repo_tags.txt"
+        file_content=$(cat "$file_path")
         if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }}; fi
-        hub release create -F "./repo_tags.txt" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}"
+        hub release create -m "$file_content" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
