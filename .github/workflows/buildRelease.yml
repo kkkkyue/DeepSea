@@ -97,5 +97,5 @@ jobs:
     - name: baidupcs
       run: |
         BaiduPCS-Go update
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
