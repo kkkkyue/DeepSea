@@ -62,6 +62,6 @@ jobs:
           assets+=("-a" "$asset")
         done
         if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }}; fi
-        hub release create -F "repo_tags.txt" "${assets[@]}" -m "Release v${{ steps.latest_version.outputs.latest_tag }}" "v${{ steps.latest_version.outputs.latest_tag }}"
+        hub release create -F "./repo_tags.txt" "${assets[@]}" -m "Release v${{ steps.latest_version.outputs.latest_tag }}" "v${{ steps.latest_version.outputs.latest_tag }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
