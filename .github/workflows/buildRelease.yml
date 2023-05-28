@@ -25,7 +25,6 @@ jobs:
         owner: Atmosphere-NX
         repo: Atmosphere
 
-    steps:
     - uses: actions/checkout@master
     - name: Get Latest Release
       id: my_latest_version
