@@ -7,9 +7,10 @@
             "modules": [
                 "atmosphere",
                 "hekate",
+                "Sigpatches",
                 "DeepSea-Assets",
-                "hbappstore",
-                "Sigpatches"
+                "hbappstore"
+                
             ]
         },
         {
@@ -18,6 +19,7 @@
             "modules": [
                 "atmosphere",
                 "hekate",
+                "Sigpatches",
                 "DeepSea-Assets",
                 "hbappstore",
                 "deepseatoolbox",
@@ -31,8 +33,7 @@
                 "nxovlloader",
                 "ovlsysmodules",
                 "teslamenu",
-                "deepseacpr",
-                "Sigpatches"
+                "deepseacpr"
             ]
         },
         {
@@ -41,6 +42,7 @@
             "modules": [
                 "atmosphere",
                 "hekate",
+                "Sigpatches",
                 "DeepSea-Assets",
                 "hbappstore",
                 "deepseatoolbox",
@@ -61,8 +63,8 @@
                 "tegraexplorer",
                 "nxshell",
                 "missioncontrol",
-                "ldn_mitm",
-                "Sigpatches"
+                "ldn_mitm"
+                
             ]
         }
     ],
