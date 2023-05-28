@@ -48,6 +48,6 @@ if __name__ == '__main__':
       
       logging.info(f"[{package['name']}] All modules processed.")
       logging.info(f"[{package['name']}] Creating ZIP")
-      shutil.make_archive(f"deepsea-{package['name']}_v{settings['releaseVersion']}", 'zip', "./sd")
+      shutil.make_archive(f"deepsea-{package['name']}", 'zip', "./sd")
 
 
