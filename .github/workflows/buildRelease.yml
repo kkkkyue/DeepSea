@@ -79,6 +79,7 @@ jobs:
         for asset in ./*deepsea*.zip; do
           assets2+=("$asset")
         done
+        ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go rm /NS/deepsea/*
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go u "${assets2[@]}" /NS/deepsea
       env:
         BDUSS: ${{ secrets.BDUSS }}
