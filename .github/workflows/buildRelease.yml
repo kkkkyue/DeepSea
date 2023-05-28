@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-   - cron: '0 12 * * *'
+   - cron: '0 */4 * * *'
 
 defaults:
   run:
@@ -72,13 +72,13 @@ jobs:
       run: |
         wget https://github.com/qjfoidnh/BaiduPCS-Go/releases/download/v3.9.1/BaiduPCS-Go-v3.9.1-linux-amd64.zip
         unzip ./BaiduPCS-Go-v3.9.1-linux-amd64.zip
+        rm -rf ./BaiduPCS-Go-v3.9.1-linux-amd64.zip
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go update
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go login -bduss=$BDUSS
         assets2=()
-        for asset in .*deepsea.*\.zip; do
+        for asset in ./*deepsea*.zip; do
           assets2+=("$asset")
         done
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go u "${assets2[@]}" /NS/deepsea
       env:
         BDUSS: ${{ secrets.BDUSS }}
-
