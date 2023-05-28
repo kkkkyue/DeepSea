@@ -75,7 +75,7 @@ jobs:
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go update
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go login -bduss=$BDUSS
         assets2=()
-        for asset in ./*.zip; do
+        for asset in .*deepsea.*\.zip; do
           assets2+=("$asset")
         done
         ./BaiduPCS-Go-v3.9.1-linux-amd64/BaiduPCS-Go u "${assets2[@]}" /NS/deepsea
