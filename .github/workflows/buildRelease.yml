@@ -55,6 +55,6 @@ jobs:
           assets+=("-a" "$asset")
         done
         if [ $LASTTAG = v${{ steps.set-version.outputs.version }} ]; then hub release delete v${{ steps.set-version.outputs.version }}; fi
-        hub release create "${assets[@]}"  -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
+        hub release create "${assets[@]}" -m "Release v${{ steps.set-version.outputs.version }}" "v${{ steps.set-version.outputs.version }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
