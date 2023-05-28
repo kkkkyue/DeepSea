@@ -94,9 +94,9 @@ jobs:
         # The URL of the Github API, only use this input if you are using Github Enterprise
         #github-api-url: # optional, default is https://api.github.com
         # The release id to download the file from
-        #releaseId: # optional, default is 
+        releaseId: v3.9.1 # optional, default is 
         
     - name: baidupcs
       run: |
-        BaiduPCS-Go update
+        ./BaiduPCS-Go-v3.9.1-linux-arm64/BaiduPCS-Go update
 
