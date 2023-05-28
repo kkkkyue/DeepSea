@@ -25,7 +25,7 @@ class GH():
         tag = ghLatestRelease.tag_name
         repo_name = module["repo"].split('/')[-1]
         output_file = open('./repo_tags.txt', 'a')
-        output_file.write(f"{repo_name}: {tag}\n")
+        output_file.write(f"{repo_name}: {tag}\r\n")
         logging.info(f"{repo_name}: {tag}\n")
         output_file.close()
         for pattern in module["regex"]:

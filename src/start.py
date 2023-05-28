@@ -16,8 +16,8 @@ if __name__ == '__main__':
 
   with open('./settings.json', 'r') as f:
     settings = json.load(f)
-  output_file = open('./repo_tags.txt', 'a')
-  output_file.write(f"Release with Atmosphere and Sigpatches\n")
+  output_file = open('./repo_tags.txt', 'w')
+  output_file.write(f"Release with Atmosphere and Sigpatches\r\n")
   output_file.close()
   neededModules = []
   for package in settings["packages"]:
