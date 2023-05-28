@@ -18,9 +18,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: Get Latest Release
+    - name: Get Atmosphere Latest Release
       id: latest_version
-      uses: abatilo/release-info-action@v1.3.0
+      uses: abatilo/release-info-action@v1.3.3
       with:
         owner: Atmosphere-NX
         repo: Atmosphere
@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Get Latest Release
       id: my_latest_version
-      uses: abatilo/release-info-action@v1.3.0
+      uses: abatilo/release-info-action@v1.3.3
       with:
         owner: kkkkyue
         repo: DeepSea
@@ -61,7 +61,7 @@ jobs:
         for asset in ./*.zip; do
           assets+=("-a" "$asset")
         done
-        if [ ${{ steps.my_latest_version.outputs.version }} = v${{ steps.latest_version.outputs.version }} ]; then hub release delete ${{ steps.my_latest_version.outputs.version }}; fi
-        hub release create "${assets[@]}" -m "Release v${{ steps.latest_version.outputs.version }}" "v${{ steps.latest_version.outputs.version }}"
+        if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }}; fi
+        hub release create "${assets[@]}" -m "Release v${{ steps.latest_version.outputs.latest_tag }}" "v${{ steps.latest_version.outputs.latest_tag }}"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
