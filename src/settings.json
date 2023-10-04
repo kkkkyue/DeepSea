@@ -64,7 +64,6 @@
                 "nxshell",
                 "missioncontrol",
                 "ldn_mitm"
-                
             ]
         }
     ],
@@ -347,13 +346,13 @@
         "tinwoo": {
             "repo": "mrdude2478/TinWoo",
             "regex": [
-                ".*TinWoo-Installer.*\\.zip"
+                ".*Tinwoo-Installer.*\\.zip"
             ],
             "steps": [
                 {
                     "name": "extract",
                     "arguments": [
-                        ".*TinWoo-Installer.*\\.zip"
+                        ".*Tinwoo-Installer.*\\.zip"
                     ]
                 }
             ]
