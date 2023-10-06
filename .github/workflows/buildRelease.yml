@@ -63,8 +63,8 @@ jobs:
         done
         file_path="./repo_tags.txt"
         file_content=$(cat "$file_path")
-        if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }}; fi
-        if [ ${{ steps.latest_version.outputs.latest_tag }} != vnull ]; then hub release create -m "$file_content" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}"; fi
+        if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then hub release delete ${{ steps.my_latest_version.outputs.latest_tag }};fi
+        if [ ${{ steps.latest_version.outputs.latest_tag }} != vnull ]; then hub release create -m "$file_content" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}";fi
         
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
