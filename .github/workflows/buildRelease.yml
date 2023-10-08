@@ -63,6 +63,9 @@ jobs:
         done
         file_path="./repo_tags.txt"
         file_content=$(cat "$file_path")
+
+        sudo apt-get install -y hub
+        
         if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then 
            hub release delete ${{ steps.my_latest_version.outputs.latest_tag }};
         fi
