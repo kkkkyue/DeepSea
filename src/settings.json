@@ -32,7 +32,8 @@
                 "nxovlloader",
                 "ovlsysmodules",
                 "teslamenu",
-                "deepseacpr"
+                "deepseacpr",
+                "goldleaf"
             ]
         },
         {
@@ -61,7 +62,8 @@
                 "tegraexplorer",
                 "nxshell",
                 "missioncontrol",
-                "ldn_mitm"
+                "ldn_mitm",
+                "goldleaf"
             ]
         }
     ],
@@ -317,6 +319,20 @@
                     "arguments": [
                         "atmosphere/contents/0100000000000352/flags/boot2.flag"
                     ]
+                }
+            ]
+        },
+        "goldleaf": {
+            "repo": "XorTroll/Goldleaf",
+            "regex": ["Goldleaf.nro"],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": ["switch/Goldleaf"]
+                },
+                {
+                    "name": "move",
+                    "arguments": ["Goldleaf.nro", "switch/Goldleaf/Goldleaf.nro"]
                 }
             ]
         },
