@@ -359,20 +359,6 @@
                 }
             ]
         },
-        "tinwoo": {
-            "repo": "mrdude2478/TinWoo",
-            "regex": [
-                ".*Tinwoo-Installer.*\\.zip"
-            ],
-            "steps": [
-                {
-                    "name": "extract",
-                    "arguments": [
-                        ".*Tinwoo-Installer.*\\.zip"
-                    ]
-                }
-            ]
-        },
         "sysclk": {
             "repo": "retronx-team/sys-clk",
             "regex": [
@@ -610,7 +596,7 @@
         "dbi": {
             "repo": "rashevskyv/dbi",
             "regex": [
-                ".*DBI.*\\.nro",
+                ".*DBI.nro",
                 ".*dbi.*\\.config"
             ],
             "steps": [
