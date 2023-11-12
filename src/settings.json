@@ -33,7 +33,8 @@
                 "ovlsysmodules",
                 "teslamenu",
                 "deepseacpr",
-                "goldleaf"
+                "goldleaf",
+                "dbi"
             ]
         },
         {
@@ -63,7 +64,8 @@
                 "nxshell",
                 "missioncontrol",
                 "ldn_mitm",
-                "goldleaf"
+                "goldleaf",
+                "dbi"
             ]
         }
     ],
@@ -608,6 +610,35 @@
                     "arguments": [
                         "TegraExplorer.bin",
                         "bootloader/payloads/TegraExplorer.bin"
+                    ]
+                }
+            ]
+        },
+        "dbi": {
+            "repo": "rashevskyv/dbi",
+            "regex": [
+                ".*DBI.*\\.nro",
+                ".*dbi.*\\.config"
+            ],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/DBI"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "DBI.nro",
+                        "switch/DBI/DBI.nro"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "dbi.config",
+                        "switch/DBI/dbi.config"
                     ]
                 }
             ]
