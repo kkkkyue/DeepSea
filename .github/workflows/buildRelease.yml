@@ -20,7 +20,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Get Atmosphere Latest Release
       id: latest_version
-      uses: abatilo/release-info-action@v1.3.3
+      uses: abatilo/release-info-action@v1.1.0
       with:
         owner: Atmosphere-NX
         repo: Atmosphere
@@ -28,7 +28,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Get Latest Release
       id: my_latest_version
-      uses: abatilo/release-info-action@v1.3.3
+      uses: abatilo/release-info-action@v1.1.0
       with:
         owner: kkkkyue
         repo: DeepSea
