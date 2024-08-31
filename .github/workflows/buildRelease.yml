@@ -66,14 +66,12 @@ jobs:
 
         sudo apt-get install -y hub
 
-        echo "Version1 ${{ steps.my_latest_version.outputs.latest_tag }} v2${{ steps.latest_version.outputs.latest_tag }}"
-        
-        if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then 
+        if [ ${{ steps.my_latest_version.outputs.latest_tag }} = ${{ steps.latest_version.outputs.latest_tag }} ]; then 
            hub release delete ${{ steps.my_latest_version.outputs.latest_tag }};
         fi
         
         if [ ${{ steps.latest_version.outputs.latest_tag }} != vnull ]; then 
-           hub release create -m "$file_content" "${assets[@]}" "v${{ steps.latest_version.outputs.latest_tag }}";
+           hub release create -m "$file_content" "${assets[@]}" "${{ steps.latest_version.outputs.latest_tag }}";
         fi
         
       env:
