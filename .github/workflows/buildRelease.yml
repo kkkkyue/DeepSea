@@ -65,6 +65,8 @@ jobs:
         file_content=$(cat "$file_path")
 
         sudo apt-get install -y hub
+
+        echo "Version1 ${{ steps.my_latest_version.outputs.latest_tag }} v2${{ steps.latest_version.outputs.latest_tag }}"
         
         if [ ${{ steps.my_latest_version.outputs.latest_tag }} = v${{ steps.latest_version.outputs.latest_tag }} ]; then 
            hub release delete ${{ steps.my_latest_version.outputs.latest_tag }};
