@@ -7,7 +7,6 @@
             "modules": [
                 "atmosphere",
                 "hekate",
-                "Sigpatches",
                 "DeepSea-Assets",
                 "hbappstore"
                 
@@ -19,7 +18,6 @@
             "modules": [
                 "atmosphere",
                 "hekate",
-                "Sigpatches",
                 "DeepSea-Assets",
                 "hbappstore",
                 "deepseatoolbox",
@@ -42,7 +40,6 @@
             "modules": [
                 "atmosphere",
                 "hekate",
-                "Sigpatches",
                 "DeepSea-Assets",
                 "hbappstore",
                 "deepseatoolbox",
